@@ -1,0 +1,19 @@
+<div class="detail">
+    
+    <!-- <input *ngIf="editing" type="text" value="oneItem.fullName"/> -->
+    <!-- <div *ngIf="selectedP === passenger"> -->
+        
+    <span class="status" [ngClass]="getStatusClass(oneItem)"></span>
+    <span *ngIf="!editing"> {{ oneItem.fullName }} </span>
+    <div class="date">
+        Checkin Date :
+        {{
+          oneItem.checkedIn
+            ? (oneItem.checkInDate | date: "y MMMM d" | uppercase)
+            : "not checked in yet"
+        }}
+    </div>
+    <div class="children">
+        children: {{ oneItem.children?.length || 0 }}
+    </div>
+</div>
